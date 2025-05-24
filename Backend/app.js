@@ -21,7 +21,8 @@ const expenseRouter = require("./routes/expense-router.js");
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    // origin: "http://localhost:5173",
+    origin: "https://personal-kharcha-app.netlify.app",
     credentials: true,
   })
 );
