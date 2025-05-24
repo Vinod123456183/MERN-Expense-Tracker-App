@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Peignior+Sans+Serif&family=North+Culture&family=Compel+Geometric&family=Fibon+Sans&family=Kanakira&family=Gemsbuck&family=Theater+Bold+Sans+Serif&family=Tulisans&family=Fresty+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bruno+Ace+SC&family=Castoro+Titling&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Julius+Sans+One&family=League+Spartan:wght@100..900&family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nerko+One&family=Orbitron:wght@400..900&family=PT+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Switch Styles */
+@layer base {
+  :root {
+    --background-color: #f4f4f4;
+    --text-color: #181818;
+    /* Dark mode gradient */
+    --bg-gradient: linear-gradient(to bottom, #f3f3f3, #e4e2e2);
+    --icon-color: #2a2a2a; /* Light mode icon color */
+  }
+
+  [data-theme="dark"] {
+    --background-color: #010200;
+    --text-color: #ffffff;
+    --icon-color: #ffae00; /* Dark mode icon color */
+
+    /* Dark mode gradient */
+    --bg-gradient: linear-gradient(
+      to bottom,
+      /* Correct gradient direction */ #1f1f1f,
+      #0f0f0f
+    );
+  }
+
+
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color ease, color ease;
+  }
+
+  ::selection {
+    background-color: var(--text-color);
+    color: var(--background-color);
+  }
+
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #dddddd;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #4d4c4c;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(85, 85, 192);
+  }
+}
