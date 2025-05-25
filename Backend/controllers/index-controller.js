@@ -118,7 +118,7 @@ const logOutController = async (req, res, next) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
 
-      sameSite: "Strict",
+      sameSite: "None",
       path: "/",
     });
     res.status(200).json({ success: true, message: "Logged out successfully" });
