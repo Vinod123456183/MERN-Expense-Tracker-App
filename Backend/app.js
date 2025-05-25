@@ -1,48 +1,49 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
-const app = express();
-const path = require("path");
 const cors = require("cors");
-
+const path = require("path");
 require("dotenv").config();
 
+const app = express();
+
+// ✅ Middleware Setup
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use(express.urlencoded({ extended: true }));
+// ✅ CORS Configuration
+app.use(
+  cors({
+    origin: "https://roaring-frangollo-54814f.netlify.app", // ✅ Your Netlify frontend URL
+    credentials: true, // ✅ Allow sending cookies
+  })
+);
+
+// ✅ View Engine (Optional if you're using EJS)
 app.set("view engine", "ejs");
 
-// const db = require("./config/mongoose-atlas-connection");
+// ✅ MongoDB and Routes
 const db = require("./config/mongoose-atlas-connection.js");
 const indexRouter = require("./routes/index-router");
 const incomeRouter = require("./routes/income-router.js");
 const expenseRouter = require("./routes/expense-router.js");
 
-app.use(
-  cors({
-    // origin: "http://localhost:5173",
-    origin: ["http://localhost:5173" , "https://roaring-frangollo-54814f.netlify.app"],
-    credentials: true,
-  })
-);
 app.use("/auth-user", indexRouter);
 app.use("/api/v1/income", incomeRouter);
 app.use("/api/v1/expense", expenseRouter);
 
-app.listen(process.env.PORT);
+// ✅ Test Route
+app.get("/", (req, res) => {
+  res.send("Backend is live ✅");
+});
 
+// ✅ Global Error Handler
 app.use((err, req, res, next) => {
-  console.error(err.stack); // Optional: log the error stack for debugging
+  console.error(err.stack);
   res.status(err.statusCode || 500).json({
     success: false,
     message: err.message || "Internal Server Error",
   });
 });
-
-/*
-npm install -g npm-check-updates
-ncu -u
-npm install
-
-*/
+ app.listen(process.env.PORT);
