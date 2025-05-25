@@ -9,6 +9,10 @@ import Income from "./pages/dashboard/Income.jsx";
 import Expense from "./pages/dashboard/Expense.jsx";
 import ContactUS from "./pages/core/ContactUs.jsx";
 import DashBoard_Frontend from "./pages/core/DashBoard_Frontend.jsx";
+import axios from "axios";
+axios.defaults.baseURL = "https://your-backend.onrender.com"; // 🔁 Replace this with your Render backend URL
+axios.defaults.withCredentials = true; // ✅ To allow cookies across origins
+
 
 // Routes and router setup
 import {
