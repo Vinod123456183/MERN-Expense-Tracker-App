@@ -22,7 +22,7 @@ const expenseRouter = require("./routes/expense-router.js");
 app.use(
   cors({
     // origin: "http://localhost:5173",
-    origin: "https://roaring-frangollo-54814f.netlify.app",
+    origin: ["http://localhost:5173" , "https://roaring-frangollo-54814f.netlify.app"],
     credentials: true,
   })
 );
