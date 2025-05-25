@@ -83,8 +83,9 @@ const loginController = async (req, res) => {
     res
       .cookie("access_token", token, {
         httpOnly: true,
-        sameSite: "Strict",
+        sameSite: "None",
         path: "/",
+        secure: true,
       })
       .status(200)
       .json({
