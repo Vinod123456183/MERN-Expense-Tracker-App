@@ -83,7 +83,7 @@ function Home() {
               <BalanceComponent
                 text="Final Balance Overview"
                 amount={totalIncomeLeft - totalExpenseAmount}
-                about="Aaukat 2.0"
+                about="Money Left !"
               />
             </ScrollAnimationWrapper>
             <ScrollAnimationWrapper delay={0.6}>
@@ -97,7 +97,7 @@ function Home() {
               <BalanceComponent
                 text="Average Expense"
                 amount={averageExpenseTotal}
-                about="Sad Hours"
+                about="Sad Moments"
               />
             </ScrollAnimationWrapper>
             <ScrollAnimationWrapper delay={0.8}>
@@ -108,7 +108,7 @@ function Home() {
                     ? "0"
                     : (totalIncomeLeft / totalExpenseAmount).toFixed(3)
                 }
-                about="A never-ending tug-of-war!"
+                about="Balance Ratio"
               />
             </ScrollAnimationWrapper>
           </div>
@@ -128,4 +128,5 @@ function Home() {
 }
 
 export default Home;
+
 
