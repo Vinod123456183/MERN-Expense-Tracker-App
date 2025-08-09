@@ -76,7 +76,7 @@ function Home() {
               <BalanceComponent
                 text="Total Expenses"
                 amount={totalExpenseAmount}
-                about="Uda Diye BC"
+                about="All Got Spend !"
               />
             </ScrollAnimationWrapper>
             <ScrollAnimationWrapper delay={0.5}>
@@ -128,3 +128,4 @@ function Home() {
 }
 
 export default Home;
+
